@@ -1,0 +1,21 @@
+<p>friend works!</p>
+
+<!--form (ngSubmit)="onsubmit($event)">
+    <input 
+      type="text" 
+      id="user" 
+      name="user"
+      placeholder="Username ID of the user from who i want to see the friends">
+</form>
+
+<br>
+
+<a (click)="obtener()" class="btn btn-warning">
+  Look at its friends
+</a--> 
+
+<br>
+
+<ul *ngFor="let friend of friends; let i = index">
+    <!--<td>{{employee._id}}</td>-->
+    <li>{{friend}}</li>

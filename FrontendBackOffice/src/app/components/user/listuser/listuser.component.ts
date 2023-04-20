@@ -24,6 +24,7 @@ constructor(private userService: UserService, private sharedDataService: SharedD
   }
 
   users: User [] = [];
+  filterExp: any;
 
   obtenerUsers(){
     this.userService.getUsers().subscribe(data => {
@@ -60,5 +61,15 @@ constructor(private userService: UserService, private sharedDataService: SharedD
         console.log(error);
       })
     }    
+  }
+  onsubmit(event: any) {
+    this.users=this.users.filter(user=> user.exp>=event.target.filterExp.value)
+    //this.filterExp = event.target.filterExp.value;
+    return event.target.filterExp.value;
+   }
+
+  filtrarUsers(){
+    //this.obtenerUsers()
+    //this.users=this.users.filter(user=> user.exp>=this.filterExp);
   }
 }
