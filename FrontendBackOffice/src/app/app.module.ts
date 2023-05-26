@@ -29,6 +29,7 @@ import { ModifyuserComponent } from './components/user/modifyuser/modifyuser.com
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './components/auth/auth.service';
 import { AuthGuardService } from './components/auth/auth-guard.service';
+import { FriendComponent } from './components/friend/friend.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AuthGuardService } from './components/auth/auth-guard.service';
     ListuserComponent,
     ModifyuserComponent,
     LoginComponent,
+    FriendComponent,
   ],
   imports: [
     BrowserModule,

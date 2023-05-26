@@ -4,6 +4,7 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { UsuariosComponent } from './components/user/usuarios/usuarios.component';
 import { ChallengesComponent } from './components/challenge/challenges/challenges.component';
 import { MapaComponent } from './components/map/mapa/mapa.component';
+import { FriendComponent } from './components/friend/friend.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuardService as AuthGuard} from './components/auth/auth-guard.service';
 
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'mapa',
     component: MapaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'friend',
+    component: FriendComponent,
     canActivate: [AuthGuard]
   },
   {

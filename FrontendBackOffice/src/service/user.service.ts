@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/models/user';
+import { Friend } from 'src/models/friend';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,18 @@ export class UserService {
 
   disableUser(id: String, body:any): Observable<any> {
     return this.http.post(this.url + '/disable/' + id, body);
+  }
+
+  getUserFriends(id: String): Observable<String[]> {
+    return this.http.get<String[]>(this.url + '/get/friends/'+id);
+  }
+
+  getUserFriendsCount(id: String): Observable<String> {
+    return this.http.get<String>(this.url + '/get/friends/count/'+id);
+  }
+
+  addFriend(friend: Friend): Observable<any>{
+    return this.http.post(this.url + '/follow/add', friend);
   }
 
 }

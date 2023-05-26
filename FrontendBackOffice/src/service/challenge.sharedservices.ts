@@ -21,5 +21,6 @@ export class SharedDataService {
   editClickedUser = new Subject<boolean>();
 
   user: any = null;
+
 }
 
